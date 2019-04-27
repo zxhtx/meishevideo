@@ -1,0 +1,101 @@
+<widget id="A6086244171992" version="0.0.1">
+
+    <name>bigxin</name>
+
+    <description>
+
+        Example For APICloud.
+
+    </description>
+
+    <author email="developer@apicloud.com" href="http://www.apicloud.com">
+
+        Developer
+
+    </author>
+
+    <content src="index.html"/>
+
+    <access origin="*"/>
+
+    <preference name="pageBounce" value="false"/>
+
+    <preference name="appBackground" value="#ffffff"/>
+
+    <preference name="windowBackground" value="#ffffff"/>
+
+    <preference name="frameBackgroundColor" value="#ffffff"/>
+
+    <preference name="hScrollBarEnabled" value="false"/>
+
+    <preference name="vScrollBarEnabled" value="false"/>
+
+    <preference name="autoLaunch" value="true"/>
+
+    <preference name="fullScreen" value="false"/>
+
+    <preference name="autoUpdate" value="true"/>
+
+    <preference name="smartUpdate" value="false"/>
+
+    <preference name="debug" value="true"/>
+
+    <preference name="statusBarAppearance" value="false"/>
+
+    <permission name="readPhoneState"/>
+
+    <permission name="camera"/>
+
+    <permission name="record"/>
+
+    <permission name="location"/>
+
+    <permission name="fileSystem"/>
+
+    <permission name="internet"/>
+
+    <permission name="bootCompleted"/>
+
+    <permission name="hardware"/>
+
+
+    <preference name="customRefreshHeader" value="UIPullRefreshFlash"/>
+
+   <!-- <feature name="ajpush">
+        <param name="appkey" value="" />
+
+    </feature> -->
+    <!-- <feature name="hikvision">
+        <param name="appKey" value="163114c8-31b5-4424-bb85-617f81cf54d9"/>
+    </feature> -->
+
+    <!-- <feature name="easeChat"> -->
+    <!-- <feature name="UIEaseChat"> -->
+    <!-- <param name="appKey" value="1154170221178369#apicloud" />
+    <param name="ios_apnsCertName" value="81qz3dBYB5q2nGji4IYrawr1" />
+    <param name="enableDnsConfig" value="true" />
+    <param name="chatPort" value= "6718"/>
+    <param name="chatServer" value="im2.ssy.citics.com" />
+    <param name="restServer" value="a1.ssy.citics.com:88" />
+    <param name="dnsURL" value="" />
+  </feature> -->
+  <!-- <meta-data
+      name="EASEMOB_APPKEY"
+      value="1176170302115001#test" /> -->
+
+  <!-- <meta-data
+      name="EASEMOB_APPKEY"
+      value="1176170302115001#test" />
+      <feature name="UIBPlayer">
+            <param name="AccessKey" value="4a858acaa7c14b0091d244fabb168a38"/>
+      </feature> -->
+<!-- <preference name="querySchemes" value="weibo" /> -->
+<!-- <feature name="ajpush">
+        <param name="app_key" value="7de9ef0a76d4f877dae66150" />
+        <param name="channel" value="your channel" />
+    </feature> -->
+
+    <preference name="backgroundMode" value="audio"/>
+
+
+</widget>

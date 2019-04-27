@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <style>
+        /*header{ background-color: #f2f2f2;  line-height: 42px; font-size: 18px; text-align: center; }
+        .flex-con{
+          overflow: auto
+        }*/
+        body{
+          text-align: center;
+        }
+        div{
+          width: 100%;
+          height: 80px;
+          background-color: #008000;
+          color:#fff;
+          margin: 0 auto;
+          line-height: 100px;
+          font-size: 18px;
+
+        }
+    </style>
+</head>
+<body>
+  <div>meisheVideo示例</div>
+
+
+
+</body>
+</html>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+
+
+        var header = $api.byId('header');
+        //适配iOS 7+，Android 4.4+状态栏
+        //$api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+//         api.openFrameGroup({
+//     name: 'group1',
+//     rect: {
+//         x: 0,
+//         y: 0,
+//         w: 'auto',
+//         h: 'auto'
+//     },
+//     frames: [{
+//         name: 'B',
+//         url: 'html/B.html',
+//         bgColor: '#fff'
+//     }, {
+//         name: 'C',
+//         url: 'html/C.html',
+//         bgColor: '#fff'
+//     }]
+// }, function(ret, err) {
+//     var index = ret.index;
+// });
+
+        api.openFrame({
+            name: 'meishevideo',
+            url: 'html/meishevideo.html',
+
+            // url: 'index.html',
+            bounces: false,
+            reload: true,
+            allowEdit:true,
+            bgColor: '#fff',
+            useWKWebView:true,
+            rect: {
+                x: 0,
+                y: 80,
+                w: 'auto',
+                h: 'auto'
+
+            },
+
+
+        });
+
+
+        // api.openFrame({
+        //     name: 'WIS0',
+        //     url: 'html/WIS0.html',
+        //     // url: 'index.html',
+        //     bounces: false,
+        //     reload: true,
+        //     allowEdit:true,
+        //     bgColor: '#fff',
+        //     useWKWebView:true,
+        //     rect: {
+        //         x: 0,
+        //         y: 100,
+        //         w: 'auto',
+        //         h: 'auto'
+        //
+        //
+        //         // marginLeft:0, //相对父 window 左外边距的距离
+        //         // marginTop: 0, //相对父 window 上外边距的距离
+        //         // marginBottom: 0, //相对父 window 下外边距的距离
+        //         // marginRight: 0 //相对父 window 右外边距的距离
+        //
+        //     },
+        //
+        //
+        // });
+
+
+    };
+
+
+
+</script>

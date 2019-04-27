@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <style>
+        body {}
+
+        button {
+            font-size: 15px;
+            width: 45%;
+            height: 30px;
+            border: 2px solid #008000;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #008000;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #008000;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="fnopen()">打开视频录制</button>
+    <button onclick="fnclose()">关闭录制页面</button>
+    <button onclick="fnopenClipView()">打开视频编辑</button>
+    <button onclick="fncloseClipView()">关闭视频编辑</button>
+    <button onclick="fnopenPreviewView()">打开视频预览</button>
+    <button onclick="fnclosePreviewView()">关闭频预览</button>
+    <button onclick="fnflashOn()">打开手电筒</button>
+    <button onclick="fnflashOff()">关闭手电筒</button>
+
+    <button onclick="fnsetMusic()">设置背景音乐</button>
+    <button onclick="fnsetVolumn()">设置音量</button>
+    <button onclick="fngenerateVideo()">生成视频</button>
+    <button onclick="fnaddEventListener()">添加监听</button>
+    <!-- 仅支持ios -->
+    <button onclick="fnconversion()">视频转换</button>
+
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+
+
+    };
+
+    function fnopen() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.open({
+            rect: {
+                x: 20,
+                y: 300,
+                w: 320,
+                h: 300
+            },
+            fixedOn: api.frameName,
+            fixed: true
+        }, function(ret) {
+            if (ret.status) {
+                api.alert(ret.eventType);
+            } else {
+                api.alert({
+                    msg: JSON.stringify(err)
+                });
+            }
+        })
+    }
+
+    function fnclose() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.close()
+    }
+
+    function fnopenClipView() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.openClipView({
+            rect: {
+              x: 20,
+              y: 300,
+                w: 320,
+                h: 300
+            },
+            path: '',
+            fixedOn: api.frameName,
+            fixed: true
+        }, function(ret) {
+            if (ret.status) {
+                api.alert(ret.eventType);
+            } else {
+                api.alert({
+                    msg: JSON.stringify(err)
+                });
+            }
+        })
+    }
+
+    function fncloseClipView() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.closeClipView()
+    }
+
+    function fnopenPreviewView() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.openPreviewView({
+            rect: {
+              x: 20,
+              y: 300,
+                w: 320,
+                h: 300
+            },
+            lstRecFiles: [],
+        }, function(ret) {
+            api.alert(JSON.stringify(ret));
+        })
+    }
+
+    function fnclosePreviewView() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.closePreviewView()
+    }
+
+    function fnflashOn() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.flashOn()
+    }
+
+    function fnflashOff() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.flashOff()
+    }
+
+    function fnsetMusic() {
+        var meisheVideo = api.require('meisheVideo');
+        meisheVideo.setMusic({
+            musicPath: 'fs://testMusic.mp3'
+        }, function(ret) {
+            alert(JSON.stringify(ret));
+        })
+    }
+    function fnsetVolumn(){
+      var meisheVideo = api.require('meisheVideo');
+meisheVideo.setVolumn({
+    BGMVolume:50,
+    originalSoundVolume:50
+},function(ret){
+    alert(JSON.stringify(ret));
+})
+    }
+
+    function fngenerateVideo(){
+      var meisheVideo = api.require('meisheVideo');
+meisheVideo.generateVideo({
+    savePath:'fs://test',
+    resolution:480,
+},function(ret){
+    alert(JSON.stringify(ret));
+})
+    }
+    function fnaddEventListener(){
+      var meisheVideo = api.require('meisheVideo');
+meisheVideo.addEventListener(function(ret){
+    alert(JSON.stringify(ret));
+})
+    }
+
+    //仅支持ios
+    function fnconversion(){
+      var meisheVideo = api.require('meisheVideo');
+meisheVideo.conversion({
+   localIdentifier:''
+},function(ret){
+    alert(JSON.stringify(ret));
+})
+    }
+</script>
+
+</html>
